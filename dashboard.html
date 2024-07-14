@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color:#433D8B;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header h1 {
+            color: #faf5f8;
+            margin: 0;
+        }
+        .header h2 {
+            color: #ced4da;
+        }
+        .header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: right;
+        }
+        .header nav ul li {
+            margin: 0 10px;
+        }
+        .header nav ul li a {
+            color: #faf5f8;
+            text-decoration: none;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            color: #faf5f8;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #343a40;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #faf5f8;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #575d63;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-form label {
+            margin: 10px 0 5px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .login-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #17153B;
+            color: #faf5f8;
+            margin-top: auto;
+        }
+    
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 style="color: #faf5f8;">SwiftSend</h1>
+        <h2>Connecting Drivers and Salespersons for Efficient Deliveries</h2>
+        <nav style="text-align: right;">
+            <ul>
+                <li><a href="http://127.0.0.1:5000/login">Salesman Portal</a></li>
+                <li><a href="http://127.0.0.1:5000/login">Commuter Portal</a></li>
+            </ul>
+        </nav>
+        
+        </div>
+    </header>
+    <h2>Dashboard</h2>
+    <b><a style="color: black;" href="{{ url_for('logout') }}">Logout</a></b><br></button>
+    <b><a style="color: black;" href="{{ url_for('manage_requests') }}">Manage Request</a></b><br></button>
+    <b><a style="color: black;" href="{{ url_for('manage_payments') }}">Manage Payments</a></b><br></button>
+    
+    <h3>Your Requests</h3>
+    <ul>
+        {% for request in requests %}
+            <li>Request ID: {{ request.id }}, Status: {{ request.status }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Your Payments</h3>
+    <ul>
+        {% for payment in payments %}
+            <li>Payment ID: {{ payment.id }}, Amount: {{ payment.amount }}, Status: {{ payment.status }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Your Tracking Information</h3>
+    <ul>
+        {% for tracking in trackings %}
+            <li>Request ID: {{ tracking.request_id }}, Location: {{ tracking.location }}</li>
+        {% endfor %}
+    </ul>
+    <footer class="footer">
+        <p>© 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

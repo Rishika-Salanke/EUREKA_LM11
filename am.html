@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send SMS Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Send SMS</h1>
+    <button id="sendSms">Send SMS</button>
+
+    <script>
+        document.getElementById('sendSms').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/send-sms', { method: 'POST' });
+                const result = await response.json();
+                alert(result.message);
+            } catch (error) {
+                console.error('Error sending SMS:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Request</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #433D8B;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header h1 {
+            color: #faf5f8;
+            margin: 0;
+        }
+        .header h2 {
+            color: #ced4da;
+        }
+        .header nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .header nav ul li {
+            margin: 0 10px;
+        }
+        .header nav ul li a {
+            color: #faf5f8;
+            text-decoration: none;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            color: #faf5f8;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #343a40;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #faf5f8;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #575d63;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .request-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .request-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .request-form label {
+            margin: 10px 0 5px;
+        }
+        .request-form input[type="text"],
+        .request-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .request-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .request-form button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #17153B;
+            color: #faf5f8;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>SwiftSend</h1>
+        <h2>Connecting Drivers and Salespersons for Efficient Deliveries</h2>
+        <nav>
+           
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">⋮</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <a style="background-color: rgb(65, 65, 185);" href="community.html">Our Community</a>
+                    <a style="background-color: rgb(65, 65, 185);" href="faq.html">FAQ</a>
+                    <a style="background-color: rgb(65, 65, 185);" href="aboutus.html">About Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <div class="request-form">
+            <h2>Make Request</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+    
+            <form method="POST">
+                <div class="form-group">
+                    <label for="customer_name">Customer Name</label>
+                    <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer_address">Customer Address</label>
+                    <input type="text" class="form-control" id="customer_address" name="customer_address" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer_contact">Customer Contact</label>
+                    <input type="text" class="form-control" id="customer_contact" name="customer_contact" required>
+                </div>
+                <button id="runButton" class="btn btn-primary">Make Request</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 SwiftSend. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        }
+
+        document.getElementById('runButton').addEventListener('click', function() {
+            fetch('/run_script', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                const messageDiv = document.getElementById('message');
+                if (data.success) {
+                    messageDiv.innerHTML = '<div class="alert alert-success">Script ran successfully!</div>';
+                } else {
+                    messageDiv.innerHTML = `<div class="alert alert-danger">Error: ${data.error}</div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerHTML = '<div class="alert alert-danger">An error occurred.</div>';
+            });
+        });
+    </script>
+</body>
+</html>

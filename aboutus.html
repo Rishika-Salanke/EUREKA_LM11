@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Header and Footer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .dropbtn {
+            background-color: #284E60;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 10px; /* Adjust this value to position it from the top */
+            right: 10px; /* Adjust this value to position it from the right */
+            z-index: 1; /* Ensure button is above other content */
+        }
+
+        /* Dropdown container (hidden by default) */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            text-align: right; /* Align dropdown button text to the right */
+        }
+
+        /* Dropdown content */
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 40px; /* Adjust this value to position dropdown content from the top */
+            right: 10px; /* Align dropdown content to the right edge of its container */
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+        }
+        .show {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start; /* Align items at the top */
+            gap: 1px; /* Space between video and content */
+        }
+
+        .content-container {
+            flex: 1;
+        }
+
+        pre {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>SwiftSend</h1>
+    <nav>
+        <ul>
+            <div class="list">
+                <div class="navigation">
+                    <ul>
+                        <li class="list active">
+                            <a href="#">
+                                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                <span class="text"> Home</span>
+                            </a>
+                        </li>
+                        <li class="list active">
+                            <a href="#">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <span class="text"> Profile</span>
+                            </a>
+                        </li>
+                        <li class="list active">
+                            <a href="#">
+                                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                                <span class="text"> Contact</span>
+                            </a>
+                        </li>
+                        <li class="list active">
+                            <a href="#">
+                                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                                <span class="text"> Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+    </nav>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</header>
+
+<main>
+    <div class="container">
+        <div class="content-container">
+            <pre>
+                <p style="color:violetblue;font-size:35px;">Welcome to SwiftSend - Simplifying Delivery, Empowering Communities</p>
+
+At SwiftSend, we believe in the power of community and efficiency. Our platform connects individuals 
+and businesses with local drivers to facilitate seamless and reliable delivery services. 
+Whether you're sending a package across town or craving your favorite restaurant dish at home, 
+we're here to make it happen swiftly and securely.
+
+Our mission is to revolutionize the way deliveries are made by harnessing the strength of 
+community-driven logistics. By empowering local drivers and providing a convenient platform for users, 
+we aim to redefine convenience and reliability in delivery services.
+
+Why Choose Us?
+
+Fast and Reliable: Our network of dedicated drivers ensures your items reach their destination quickly 
+and safely.
+Easy to Use: With our user-friendly app, placing delivery orders is just a few taps away.
+Community Focused: We prioritize building strong local connections and supporting our driver partners.
+Environmentally Conscious: We strive to minimize our environmental impact by optimizing delivery routes 
+and supporting eco-friendly practices.
+
+Who We Are?
+
+Founded in 2024, SwiftSend has grown from a simple idea to a thriving platform serving communities 
+across Mysuru. We're passionate about innovation and committed to providing exceptional service 
+that exceeds expectations.
+
+Get Started Today
+
+Join thousands of satisfied users and experience the convenience of SwiftSend. Whether you're a 
+business looking to streamline your deliveries or an individual needing a reliable service, 
+we're here to serve you.
+
+Contact Us
+
+Have questions or feedback? We're always here to help. Reach out to our friendly support team at <a href="mailto:workwithumap@gmail.com">workwithumap@gmail.com</a> or visit our Help Center for assistance.
+
+Thank you for choosing SwiftSend for all your delivery needs. Together, let's make every delivery a smooth and enjoyable experience.
+            </pre>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById("dropdownContent").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+<footer class="footer">
+    <p>© 2024 My Website. All rights reserved.</p>
+</footer>
+</body>
+</html>

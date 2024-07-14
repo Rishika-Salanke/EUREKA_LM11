@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesman Portal</title>
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #433D8B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        .header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #17153B;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a:link, a:visited {
+            color: white;
+            padding: 3px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover, a:active {
+            background-color: rgb(217, 215, 221);
+        }
+        .ln {
+            text-align: right;
+        }
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .button-container button {
+            background-color: rgb(160, 110, 186);
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .button-container button a {
+            color: #17153B;
+            text-decoration: none;
+        }
+        .slider {
+            width: 80%;
+            margin: 40px auto;
+        }
+        .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            height: 600px; /* Set a fixed height for the slides */
+        }
+        .slick-slide img {
+            width: 600px; /* Set image width */
+            height: 600px; /* Set image height */
+            object-fit: contain; /* Maintain aspect ratio and contain within area */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+        .intro {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+        }
+    </style>
+</head>
+<body style="background-color: beige;">
+    <header class="header">
+        <h1 style="color: #f9f3f6;">SwiftSend</h1>
+        <nav class="ln">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+                <li><a href="http://127.0.0.1:5000/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <h1 style="display: flex; justify-content: center; align-items: center; margin: 0;">Welcome to the Salesman Portal</h1>
+    <h2 class="intro"><pre>
+                        We're thrilled to have you on board! This portal is designed to streamline
+            your sales processes, connect you with our network of reliable drivers, and help you save time and money.
+                  Here, you'll find all the tools and resources you need to manage your deliveries efficiently 
+                        and enhance your sales experience. Let's drive success together!
+    </pre></h2>
+
+    <div class="center-container">
+        <h2>To Use Our Services</h2><br>
+        <div class="button-container">
+            <button>
+                <a href="http://127.0.0.1:5000/login">Login/Register</a>
+            </button>
+        </div>
+    </div>
+   <div class="slider">
+        <div><img src="s1.jpg" alt="Slide 1"></div>
+        <div><img src="s2.jpg" alt="Slide 2"></div>
+        <div><img src="s3.jpg" alt="Slide 3"></div>
+        <div><img src="s4.jpg" alt="Slide 4"></div>
+        <div><img src="s5.jpg" alt="Slide 5"></div>
+        <div><img src="s6.jpg" alt="Slide 6"></div>
+        <div><img src="s7.jpg" alt="Slide 7"></div>
+        <div><img src="s8.jpg" alt="Slide 8"></div>
+        <div><img src="s9.jpg" alt="Slide 9"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true
+            });
+        });
+    </script>
+
+    <footer class="footer">
+        <p>© 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

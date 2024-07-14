@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Header and Footer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        .header {
+            background-color:#433D8B;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #17153B;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .dropbtn {
+            background-color: #284E60;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 10px; /* Adjust this value to position it from the top */
+            right: 10px; /* Adjust this value to position it from the right */
+            z-index: 1; /* Ensure button is above other content */
+            
+        }
+
+        /* Dropdown container (hidden by default) */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            text-align: right; /* Align dropdown button text to the right */
+        }
+
+        /* Dropdown content */
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 40px; /* Adjust this value to position dropdown content from the top */
+            right: 10px; /* Align dropdown content to the right edge of its container */
+            
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+        }
+        .show {
+            display: block;
+        }
+
+        .container {
+            display:block;
+            background-color: antiquewhite;
+            align-items: flex-start; /* Align items at the top */
+            gap: 1px; /* Space between video and content */
+        }
+
+        .content-container {
+            flex: 1;
+            background-image: url('intromg.jpg');
+            background-size:contain;
+            background-clip: border-box;
+        }
+        
+    
+
+        pre {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(6, 2, 10);
+            text-align: center;
+            font-size: 30px;
+           
+        }
+        a:link, a:visited {
+  color: white;
+  padding: 3px 25px;
+  text-align:right;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgb(187, 168, 219);
+}
+.video-container{
+    height: 250px;
+    width: 250px;
+}
+.slider {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .slick-slide {
+            text-align: center; 
+            align-content: center;
+            align-items: center;
+        }
+        .slick-slide img {
+            width: 600px; /* Set image width to 300px */
+            height: 600px; /* Set image height to 300px */
+            object-fit:contain; /* Maintain aspect ratio and cover area */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1 style="color: #faf5f8;">SwiftSend</h1>
+    <h2>Connecting Drivers and Salespersons for Efficient Deliveries</h2>
+    <nav style="text-align: right;">
+        <ul>
+            <li><a href="http://127.0.0.1:5000/login">Salesman Portal</a></li>
+            <li><a href="http://127.0.0.1:5000/login">Commuter Portal</a></li>
+        </ul>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">⋮</button>
+            <div id="dropdownContent" class="dropdown-content">
+                <a style="background-color: rgb(65, 65, 185);" href="community.html">Our Community</a>
+                <a style="background-color: rgb(65, 65, 185);" href="faq.html">FAQ</a>
+                <a style="background-color: rgb(65, 65, 185);" href="aboutus.html">About Us</a>
+            </div>
+    </nav>
+    
+    </div>
+</header>
+<br>
+<main>
+    <div>
+        <h1 style="text-align: center;">Welcome to SwiftSend - Your Crowdsourced Delivery Solution</h1>
+        <h4><pre style="font-size: 25px;">Welcome to SwiftSend, where efficient delivery meets community collaboration.
+             Whether you're a driver looking to optimize your route or a salesperson seeking reliable transport,
+                    SwiftSend brings you together for seamless, cost-effective deliveries.</pre></h4>
+    </div>
+</main>
+<br>
+    <h2>To avail our services!<a style="color: #284E60;" href="http://127.0.0.1:5000/register">Register here</a></h2>
+    <div class="slider">
+        <div><img src="0.jpeg" alt="Slide 1"></div>
+        <div><img src="1.jpeg" alt="Slide 2"></div>
+        <div><img src="2.jpeg" alt="Slide 3"></div>
+        <div><img src="3.jpeg" alt="Slide 3"></div>
+        <div><img src="4.jpeg" alt="Slide 3"></div>
+    </div>
+
+    <!-- Slick Carousel JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+<script>
+    function toggleDropdown() {
+        document.getElementById("dropdownContent").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,  // Enable autoplay
+                autoplaySpeed: 3000,  // Autoplay speed in milliseconds (3000 = 3 seconds)
+                dots: true,  // Show navigation dots
+                arrows: true  // Show navigation arrows
+            });
+        });
+</script>
+
+<footer class="footer">
+    <p>© 2024 My Website. All rights reserved.</p>
+</footer>
+</body>
+</html>

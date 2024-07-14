@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesman Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #433D8B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #17153B;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        a:link, a:visited {
+            color: white;
+            padding: 3px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+            background-color: rgb(217, 215, 221);
+        }
+
+        .ln {
+            text-align: right;
+        }
+
+        .slider {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            height: 600px; /* Set a fixed height for the slides */
+        }
+
+        .slick-slide img {
+            width: 600px; /* Set image width */
+            height: 600px; /* Set image height */
+            object-fit: contain; /* Maintain aspect ratio and contain within area */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+
+        .intro {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 style="color: #0c080a;">SwiftSend</h1>
+        <nav class="ln">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+                <li><a href="http://127.0.0.1:5000/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="display: flex; justify-content: center; align-items: center; margin: 0;">Welcome to the Commuter Portal</h1>
+    <h2 class="intro">
+        <pre>
+        We’re thrilled to have you join our community! 
+        This portal is designed to empower you as a commuter in our crowdsourced delivery network,
+        connecting you with local salespeople and providing unique earning opportunities.
+        </pre>
+    </h2>
+    <div class="slider">
+        <div><img src="c1.jpg" alt="Slide 1"></div>
+        <div><img src="c2.jpg" alt="Slide 2"></div>
+        <div><img src="c3.jpg" alt="Slide 3"></div>
+        <div><img src="c4.jpg" alt="Slide 4"></div>
+        <div><img src="c5.jpg" alt="Slide 5"></div>
+        <div><img src="c6.jpg" alt="Slide 6"></div>
+        <div><img src="c7.jpg" alt="Slide 7"></div>
+        <div><img src="c8.jpg" alt="Slide 8"></div>
+        <div><img src="c9.jpg" alt="Slide 9"></div>
+        <div><img src="c10.jpg" alt="Slide 10"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true
+            });
+        });
+    </script>
+
+    <footer class="footer">
+        <p>© 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Payments</title>
+</head>
+<body>
+    <h1>Manage Payments</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Payment ID</th>
+                <th>User ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.id }}</td>
+                <td>{{ payment.user_id }}</td>
+                <td>{{ payment.amount }}</td>
+                <td>{{ payment.status }}</td>
+                <td>
+                    {% if payment.status == 'unpaid' %}
+                    <form method="post">
+                        <input type="hidden" name="payment_id" value="{{ payment.id }}">
+                        <button type="submit" name="action" value="accept">Accept Payment</button>
+                    </form>
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
